@@ -72,7 +72,7 @@ public class Room {
 		return this.priceRoom;
 	}
 	
-	public boolean getRoomAvailability() {
+	private boolean getRoomAvailability() { // TODO this method must be private
 		return this.roomAvailability;
 	}
 	
@@ -80,4 +80,49 @@ public class Room {
 		this.roomAvailability = !(this.roomAvailability); 
 	}
 	
+	/*
+	 * findAvailableRoom returns the first available room in the array 
+	 * of the indicated type. If no such room exists (either because all 
+	 * rooms of said type are occupied, or because no room of such type 
+	 * is in the array), the method returns null. 
+	 */
+	public static Room findAvailableRoom(Room[] rooms, String roomType) {
+		if (rooms != null) {
+			for (Room room: rooms) {
+				if ((room != null) && (room.getType().equals(roomType)) && room.getRoomAvailability() != false) {
+					return room;
+				}
+			}
+		}
+		return null;
+	}
+	
+	/*
+	 * Helper method to find the first unavailable room. 
+	 */
+	private static Room findUnavailableRoom(Room[] rooms, String roomType) {
+		if (rooms != null) {
+			for (Room room: rooms) {
+				if ((room != null) && (room.getType().equals(roomType)) && room.getRoomAvailability() == false) {
+					return room;
+				}
+			}
+		}
+		return null;
+	}
+	
+	/*
+	 * makeRoomAvailagle will make the first unavailable room in the 
+	 * array of the indicated type available again. If successful, the 
+	 * method should return true, otherwise the method should return
+	 * false;
+	 */
+	public static boolean makeRoomAvailable(Room[] rooms, String roomType) {
+		Room unavailableRoom = findUnavailableRoom(rooms, roomType); 
+		if (unavailableRoom != null) {
+			unavailableRoom.changeAvailability();
+			return true;
+		}
+		return false;
+	}
 }

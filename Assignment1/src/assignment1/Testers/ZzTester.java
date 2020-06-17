@@ -4,14 +4,14 @@ public class ZzTester {
 
 	public static void main(String[] args) {
 		
-		// Airport Class Tester 
+		// Airport Class Tester //////////////////////////////////////////////////////////////////////////////
 //		Airport a1 = new Airport(50, 30 , 30);
 //		Airport a2 = new Airport(-20, 40, 30); 
 //		System.out.println(Airport.getDistance(a1, a2)); 
 //
 //		System.out.println(a1.getFees());
 		
-		// Room Class Tester
+		// Room Class Tester /////////////////////////////
 		// Room Constructor1 Tester
 //		long t = System.nanoTime();
 //		Room r = new Room("double"); 
@@ -26,7 +26,7 @@ public class ZzTester {
 //		System.out.println(t2 - t);
 //		Room r4 = new Room("doe"); // IllegalArgumentException
 		
-		// Room Contstructor2 Tester
+		// Room Contstructor2 Tester /////////////////////////////////////////////////////////////////////////
 //		Room c = new Room("double"); 
 //		Room copy = new Room(c); 
 //		
@@ -35,12 +35,29 @@ public class ZzTester {
 //		c.priceRoom = 10000;
 //		System.out.println(copy.roomType + copy.priceRoom + copy.roomAvailability); // outputs double9000true
 		
-		// changeAvailability Tester
-		Room q = new Room("double"); 
-		q.changeAvailability();
-		System.out.println(q.getRoomAvailability()); // was true now is false
-		q.changeAvailability();
-		System.out.println(q.getRoomAvailability()); // was false now is true;
+		// changeAvailability Tester /////////////////////////////////////////////////////////////////////////
+//		Room q = new Room("double"); 
+//		q.changeAvailability();
+//		System.out.println(q.getRoomAvailability()); // was true now is false
+//		q.changeAvailability();
+//		System.out.println(q.getRoomAvailability()); // was false now is true;
+		
+		// findAvailableRoom and makeRoomAvailable Tester
+//		Room w = new Room("double"); 
+//		Room w1 = new Room("double");
+//		Room w2 = new Room("double");
+//		Room w3 = new Room("king");
+//		Room w4 = new Room("queen");
+//		w4.changeAvailability();
+//		System.out.println(w4.getRoomAvailability());
+//		Room[] arrayOfRooms = {w, w1, w2, w3, w4};
+//		System.out.println((Room.findAvailableRoom(arrayOfRooms, "king")));
+//		Room[] nullArray = new Room[3];
+//		System.out.println((Room.findAvailableRoom(nullArray, "king")));
+//		System.out.println(Room.makeRoomAvailable(arrayOfRooms, "queen"));
+		
+		// Hotel Class Tester ///////////////////////////////////////////////////////////////////////////////
+		
 		
 	}
 
