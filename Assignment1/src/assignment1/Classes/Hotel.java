@@ -2,13 +2,14 @@ package assignment1;
 
 public class Hotel {
 	
-	private String hotelName; 
+	public String hotelName; 
 	Room[] rooms; // the rooms in the hotel
 	
-	public Hotel(String hotelName, Room[] rooms) {
+	public Hotel(String hotelName, Room[] r) {
 		this.hotelName = hotelName; 
+		this.rooms = new Room[r.length]; 
 		for (int i = 0; i < rooms.length; i++) {
-			this.rooms[i] = new Room(rooms[i]); //TODO what if arrays have different lengths
+			this.rooms[i] = new Room(r[i]); //TODO what if arrays have different lengths
 		}
 	}
 	
@@ -21,10 +22,15 @@ public class Hotel {
 	public int reserveRoom(String roomType) {
 		if (rooms != null) {
 			Room availableRoom = Room.findAvailableRoom(rooms, roomType);
-			availableRoom.changeAvailability();
-			return availableRoom.getPrice();
+			if (availableRoom == null) {
+				throw new IllegalArgumentException("Either roomType does not match any of the defined types or there are no rooms of the type available");
+			}
+			else {
+				availableRoom.changeAvailability();
+				return availableRoom.getPrice();
+			}
 		}
-		throw new IllegalArgumentException("Either roomType does not match any of the defined types or there are no rooms available"); 
+		throw new IllegalArgumentException("Either roomType does not match any of the defined types or there are no rooms of the type available"); 
 	}
 	
 	/*

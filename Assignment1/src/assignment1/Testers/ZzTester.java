@@ -57,8 +57,22 @@ public class ZzTester {
 //		System.out.println(Room.makeRoomAvailable(arrayOfRooms, "queen"));
 		
 		// Hotel Class Tester ///////////////////////////////////////////////////////////////////////////////
-		
-		
+//		Room p = new Room("double"); 
+//		Room p1 = new Room("double");
+//		Room p2 = new Room("double");
+//		Room p3 = new Room("king");
+//		Room p4 = new Room("queen");
+//		Room p5 = new Room("king"); 
+//		Room[] testerArray = {p, p1, p2, p3, p4, p5};
+//		Hotel newHotel = new Hotel("Hiltin", testerArray); 
+//		System.out.println(newHotel.hotelName); // returns Hitlin 
+//		testerArray[3] = null;
+//		System.out.println(testerArray[3]); // returns null
+//		System.out.println(newHotel.rooms[3].getPrice()); // returns 15000
+//		System.out.println(newHotel.reserveRoom("queen"));
+//		System.out.println(newHotel.rooms[4].getRoomAvailability()); // returns false
+//		System.out.println(newHotel.cancelRoom("queen"));
+//		System.out.println(newHotel.rooms[4].getRoomAvailability()); // returns true 
 	}
 
 }

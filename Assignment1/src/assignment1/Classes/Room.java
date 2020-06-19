@@ -72,7 +72,7 @@ public class Room {
 		return this.priceRoom;
 	}
 	
-	private boolean getRoomAvailability() { // TODO this method must be private
+	public boolean getRoomAvailability() { // TODO this method must be private
 		return this.roomAvailability;
 	}
 	
