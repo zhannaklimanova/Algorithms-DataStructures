@@ -73,6 +73,15 @@ public class ZzTester {
 //		System.out.println(newHotel.rooms[4].getRoomAvailability()); // returns false
 //		System.out.println(newHotel.cancelRoom("queen"));
 //		System.out.println(newHotel.rooms[4].getRoomAvailability()); // returns true 
+	
+	   // FlightReservation Tester //////////////////////////////////////////////////////////////////////////
+	   // getCost() Tester
+//	   Airport a1 = new Airport(4, 30000, 20000);
+//	   Airport a2 = new Airport(7, 80000, 30000);
+//	   FlightReservation f1 = new FlightReservation("myFlight", a1, a2); // get cost should return 92387
+//	   int cost = f1.getCost();
+//	   System.out.println(cost);
+		
 	}
 
 }
