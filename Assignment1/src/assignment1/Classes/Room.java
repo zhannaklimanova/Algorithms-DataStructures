@@ -1,10 +1,8 @@
 package assignment1;
 
-//import java.awt.datatransfer.StringSelection; TODO what is this? 
-
 public class Room {
 
-	private String roomType; // type of room: double, queen, king //TODO change from public to static and in ZzTester change from this.roomType to getroomType;
+	private String roomType; // type of room: double, queen, king 
 	private int priceRoom; // price of room in cents
 	private boolean roomAvailability; 
 	
@@ -72,7 +70,7 @@ public class Room {
 		return this.priceRoom;
 	}
 	
-	public boolean getRoomAvailability() { // TODO this method must be private
+	private boolean getRoomAvailability() { 
 		return this.roomAvailability;
 	}
 	

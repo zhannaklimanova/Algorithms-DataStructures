@@ -6,15 +6,14 @@ public class FlightReservation extends Reservation {
 	Airport arrivalLocation;
 	
 	public FlightReservation(String reservationName, Airport departureLocation, Airport arrivalLocation) {
+		super(reservationName); 
 		
-	super(reservationName); 
-	
-	if (departureLocation.equals(arrivalLocation)) {
-		throw new IllegalArgumentException("The two airport locations are the same."); 
-	}
-	
-	this.departureLocation = departureLocation;
-	this.arrivalLocation = arrivalLocation;
+		if (departureLocation.equals(arrivalLocation)) {
+			throw new IllegalArgumentException("The two airport locations are the same."); 
+		}
+		
+		this.departureLocation = departureLocation;
+		this.arrivalLocation = arrivalLocation;
 	
 	}
 
@@ -28,8 +27,8 @@ public class FlightReservation extends Reservation {
 	@Override
 	public int getCost() {
 		double planeAndTaxesCost = 53.75 * 100;
-		double fuelsCost = ((Airport.getDistance(departureLocation, arrivalLocation) / 167.52) * 124);
-		double airportFees = departureLocation.getFees() + arrivalLocation.getFees();
+		double fuelsCost = ((Airport.getDistance(this.departureLocation, this.arrivalLocation) / 167.52) * 124);
+		double airportFees = this.departureLocation.getFees() + this.arrivalLocation.getFees();
 		
 		int totalCost = (int) Math.ceil(planeAndTaxesCost + fuelsCost + airportFees);
 		return totalCost;
@@ -40,7 +39,14 @@ public class FlightReservation extends Reservation {
 	 * it returns false. 
 	 */
 	@Override
-	public boolean equals(Object object) { // TODO check if correct
+	public boolean equals(Object object) {  
+		if (object instanceof FlightReservation) {
+			if ((this.reservationName().equals(((FlightReservation) object).reservationName())) &&
+				(this.arrivalLocation.equals(((FlightReservation) object).arrivalLocation)) && 
+				(this.departureLocation.equals(((FlightReservation) object).departureLocation))) {
+					return true;
+			}
+		}
 		return false;
 	}
 	

@@ -13,7 +13,7 @@ public class Airport {
 	}
 	
 	public int getFees() { // retrieves the fees of the airport
-		return this.airportFees; // TODO either this.airportFees or just airportFees? 
+		return this.airportFees; 
 	}
 	
 	/*
@@ -24,5 +24,4 @@ public class Airport {
 		int distance = (int) Math.ceil((Math.sqrt(Math.pow((a2.x_coordinate - a1.x_coordinate), 2) + Math.pow((a2.y_coordinate - a1.y_coordinate), 2))));
 		return distance; 
 	}
-	// TODO might need a toCents converter just in case some values are given in dollars
 }

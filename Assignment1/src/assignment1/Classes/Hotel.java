@@ -20,8 +20,8 @@ public class Hotel {
 	 * IllegalArgumentException is thrown. 
 	 */
 	public int reserveRoom(String roomType) {
-		if (rooms != null) {
-			Room availableRoom = Room.findAvailableRoom(rooms, roomType);
+		if (this.rooms != null) {
+			Room availableRoom = Room.findAvailableRoom(this.rooms, roomType);
 			if (availableRoom == null) {
 				throw new IllegalArgumentException("Either roomType does not match any of the defined types or there are no rooms of the type available");
 			}
@@ -38,8 +38,8 @@ public class Hotel {
 	 * true if the operation was possible; false otherwise.
 	 */
 	public boolean cancelRoom(String roomType) {
-		if (rooms != null) {
-			return Room.makeRoomAvailable(rooms, roomType);
+		if (this.rooms != null) {
+			return Room.makeRoomAvailable(this.rooms, roomType);
 		}
 		return false;
 	}

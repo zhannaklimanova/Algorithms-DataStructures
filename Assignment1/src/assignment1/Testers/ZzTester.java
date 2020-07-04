@@ -74,13 +74,107 @@ public class ZzTester {
 //		System.out.println(newHotel.cancelRoom("queen"));
 //		System.out.println(newHotel.rooms[4].getRoomAvailability()); // returns true 
 	
-	   // FlightReservation Tester //////////////////////////////////////////////////////////////////////////
-	   // getCost() Tester
-//	   Airport a1 = new Airport(4, 30000, 20000);
-//	   Airport a2 = new Airport(7, 80000, 30000);
-//	   FlightReservation f1 = new FlightReservation("myFlight", a1, a2); // get cost should return 92387
-//	   int cost = f1.getCost();
-//	   System.out.println(cost);
+	    // FlightReservation Tester //////////////////////////////////////////////////////////////////////////
+	    // getCost() Tester
+//	    Airport a1 = new Airport(4, 30000, 20000);
+//	    Airport a2 = new Airport(7, 80000, 30000);
+//	    FlightReservation f1 = new FlightReservation("myFlight", a1, a2); // get cost should return 92387
+//	    int cost = f1.getCost();
+//	    System.out.println(cost);
+//		
+//		// equals() Tester
+//		FlightReservation f2 = new FlightReservation("myFlight", a1, a2);
+//		FlightReservation f3 = new FlightReservation("sameFlight", a1, a2);
+//		System.out.println(f1.equals(f2)); // true
+//		System.out.println(f1.equals(f3)); // false
+//		
+//		// HotelReservation Tester /////////////////////////////////////////////////////////////////////////// 
+//		// getCost() Tester
+//		Hotel hotel1 = new Hotel("h1", testerArray);
+//		HotelReservation h1 = new HotelReservation("h1", hotel1, "double", 2);
+//		HotelReservation h2 = new HotelReservation("h1", hotel1, "double", 2);
+//		HotelReservation h3 = new HotelReservation("h1", hotel1, "king", 2);
+//		System.out.println(h1.getCost());
+//		
+//		// equals() Tester 
+//		System.out.println(h1.equals(h2)); // true
+//		System.out.println(h1.equals(h3)); // false
+//		
+//		// BnBReservation Tester  ////////////////////////////////////////////////////////////////////////////
+//		// getCost Tester 
+//		BnBReservation bb = new BnBReservation("bednbreakfast", hotel1, "double", 2);
+//		System.out.println(bb.getCost()); // 20000
+		
+		// Basket Tester
+		// add() Tester 
+//		Basket b = new Basket();
+//		Airport a1 = new Airport(7, 80000, 30000);
+//	    Airport a2 = new Airport(8, 50000, 10000);
+//	    FlightReservation r1 = new FlightReservation("myReservation", a1, a2);
+//	    FlightReservation r2 = new FlightReservation("secondReservation", a2, a1);
+//	    System.out.println(b.add(r1)); // size 1
+//	    System.out.println(b.add(r2)); // size 2
+	    
+	    //getProducts() Tester
+//	    b.getProducts();
+//	    System.out.println(r2.equals(Basket.reservations[1])); // true (must set field in Basket to public static)
+//	    System.out.println(r1.equals(Basket.reservations[0])); // true (must set field to public static)
+
+	    // remove() Tester 
+//	    Basket b1 = new Basket();
+//	    Airport o1 = new Airport(7, 80000, 30000);
+//	    Airport o2 = new Airport(8, 50000, 10000);
+//	    Airport o3 = new Airport(1400, 70000, 10000);
+//	    FlightReservation u1 = new FlightReservation("myReservation", o1, o2);
+//	    FlightReservation u2 = new FlightReservation("secondReservation", o1, o3);
+//	    FlightReservation u3 = new FlightReservation("thirdReservation", o2, o3);
+//	    b1.add(u1);
+//	    b1.add(u2);
+//	    b1.add(u3);
+//	    boolean res = b1.remove(u2);
+//		System.out.println(res); // true
+//		System.out.println(b1.getProducts().length); // 2
+//		System.out.println("correct order:" + b1.getProducts()[0].equals(u1)); // true (correct order)
+//		System.out.println("correct order:" + b1.getProducts()[1].equals(u3)); // true (correct order)
+//	    boolean res2 = b1.remove(u3);
+//		System.out.println(res2); // true
+//		System.out.println(b1.getProducts().length); // 1
+//	    boolean res3 = b1.remove(u1);
+//		System.out.println(res2); // true
+//		System.out.println(b1.getProducts().length); // 0
+		
+		// getNumOfReservations() Tester
+//		System.out.println(b1.getNumOfReservations()); 
+		
+		// getTotalCost() Tester
+//		System.out.println(b1.getTotalCost()); // 160648 cents 
+		
+		// Customer Tester ///////////////////////////////////////////////////////////////////////////////////////
+		// addToBasket() Tester
+
+//		Customer c1 = new Customer("John", 200000);
+//		c1.customerReservations.clear();
+//		System.out.println(c1.getBasket().getNumOfReservations()); // 0 reservations for now
+//		Airport a1 = new Airport(7, 80000, 30000);
+//		Airport a2 = new Airport(8, 50000, 10000);
+//		Airport a2 = new Airport(7, 80000, 30000);
+//		FlightReservation r1 = new FlightReservation("John", a1, a2);
+//		
+//		c1.addToBasket(r1);
+//		
+//		Room room1 = new Room("double");
+//		Room room2 = new Room("queen");
+//		Room room3 = new Room("king");
+//		Room[] rooms = {room1, room2, room3};
+//		Hotel h1 = new Hotel("myHotel", rooms);
+//		HotelReservation r2 = new HotelReservation("John", h1, "double", 3);
+//		
+//		c1.addToBasket(r2);
+//		System.out.println(c1.removeFromBasket(r2)); // true 
+//		System.out.println(c1.customerReservations.getNumOfReservations()); // was 2 now 1
+//		
+//		System.out.println(c1.checkOut());
+
 		
 	}
 
