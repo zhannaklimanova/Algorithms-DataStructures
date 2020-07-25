@@ -1,3 +1,4 @@
+package ass2;
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -220,9 +221,16 @@ public class MiniTester {
 
         try {
             generateLinesOnly0();
-
-            if (l1.travelOneStation(a1[3], a1[2]).equals(a2[1])) {
-                grade += 1;
+            
+            if (l1.travelOneStation(a1[3], a1[2]).equals(a2[1]) 
+                    && (l2.travelOneStation(a2[1], a1[3]).equals(a2[2]))) { // current station not on line
+                try {
+                    l2.travelOneStation(a1[3], a1[2]).equals(a2[1]);
+                    
+                }
+                catch (StationNotFoundException e) {
+                    grade += 1;
+                }
             }
 
             l2.reverseDirection();
@@ -271,13 +279,17 @@ public class MiniTester {
         try {
             generateLinesOnly0();
 
-            if (l1.getNext(a1[1]).equals(a1[2])) {
+            if ((l1.getNext(a1[1]).equals(a1[2]))
+                    && (l1.getNext(a1[4]).equals(a1[3]))
+                    && (l1.getNext(a1[0]).equals(a1[1])) ) {
                 grade += 1;
             }
 
             l1.reverseDirection();
 
-            if (l1.getNext(a1[1]).equals(a1[0])) {
+            if ((l1.getNext(a1[1]).equals(a1[0]))
+                && (l1.getNext(a1[0]).equals(a1[1]))
+                && (l1.getNext(a1[4]).equals(a1[3])) ) {
                 grade += 1;
             }
 
@@ -300,7 +312,11 @@ public class MiniTester {
         try {
             generateLinesOnly0();
 
-            if (l3.findStation(a3[3].getName()).equals(a3[3])) {
+            if (l3.findStation(a3[3].getName()).equals(a3[3]) // testing any middle station, 
+                    && (l3.findStation(a3[4].getName()).equals(a3[4])) // rightTerminus, 
+                    && (l3.findStation(a3[0].getName()).equals(a3[0])) // leftTerminus
+                    && (!l2.findStation(a2[3].getName()).equals(a3[0])) // intersection (should not be the same)
+                    && (!(l1.findStation(a1[0].getName()).equals(a3[0])))) {  // StationNotFoundExceptin (the station has to be on the same line)
                 grade += 1;
             }
 

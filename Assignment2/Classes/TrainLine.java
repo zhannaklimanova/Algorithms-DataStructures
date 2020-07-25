@@ -1,3 +1,4 @@
+package ass2;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -99,9 +100,15 @@ public class TrainLine {
 	}
 
 	public int getSize() {
-
-		// YOUR CODE GOES HERE
-		return 0; // change this!
+		int counter = 0;
+		TrainStation currentStation = getLeftTerminus();
+		
+		while(currentStation.getRight() != null) {
+			currentStation = currentStation.getRight();
+			counter++;
+		}
+		counter++;
+		return counter; 
 	}
 
 	public void reverseDirection() {
@@ -109,24 +116,69 @@ public class TrainLine {
 	}
 
 	// You can modify the header to this method to handle an exception. You cannot make any other change to the header.
-	public TrainStation travelOneStation(TrainStation current, TrainStation previous) {
-
-		// YOUR CODE GOES HERE
-		return null; // change this!
+	public TrainStation travelOneStation(TrainStation current, TrainStation previous) {	
+		TrainStation stationCurrent = findStation(current.getName());
+		
+		if ((stationCurrent.hasConnection == true) && (!stationCurrent.getTransferStation().equals(previous))) {
+//			stationCurrent.getTransferStation().setTrainLine(stationCurrent.getTransferStation().getTransferLine());
+			return stationCurrent.getTransferStation(); // TODO make sure the top doesn't affect anything and lines are transfered w/ train transfers
+		}
+		else {
+			return getNext(current); 
+		}
 	}
 
 	// You can modify the header to this method to handle an exception. You cannot make any other change to the header.
 	public TrainStation getNext(TrainStation station) {
-
-		// YOUR CODE GOES HERE
-		return null; // change this!
+		TrainStation startStation = findStation(station.getName());
+		
+		// cases 
+		/* case 1: (not an edge case) goingRight == true so we go right; else goingRight == false so we go left //
+		   case 2: (edge cases) goingRight == true but we're at rightTerminus so we go left and goingRight becomes false //
+		                        goingRight == false but we're at the rightTermins so we go left and goingRight remains false
+		   case 3: (edge cases) goingRight == false but we're at the leftTermins so we go right and goingRight becomes true
+		                        goingRight == true but we're at the leftTerminus so we go right and goingRight remains true // 	
+		*/
+		if (startStation != null) {
+			if (this.goingRight == true) {
+				if (startStation.getRight() == null) {
+					this.reverseDirection();
+					return startStation.getLeft();
+				}
+//				else if (startStation.getLeft() == null) {
+//					return startStation.getRight();
+//				}
+				else {
+					return startStation.getRight();
+				}
+			}
+			else { // this.goingRight == false
+				if (startStation.getLeft() == null) {
+					this.reverseDirection();
+					return startStation.getRight();
+				}
+//				else if (startStation.getRight() == null) {
+//					return startStation.getLeft();
+//				}
+				else {
+					return startStation.getLeft();
+				}
+	 		} 
+		}
+		throw new StationNotFoundException("The station you requested cannot be found!");
 	}
 
 	// You can modify the header to this method to handle an exception. You cannot make any other change to the header.
 	public TrainStation findStation(String name) {
-
-		// YOUR CODE GOES HERE
-		return null; // change this!
+		TrainStation currentStation = this.getLeftTerminus();
+		
+		while(currentStation != null) {
+			if (currentStation.getName().equals(name)) {
+				return currentStation;
+			}
+			currentStation = currentStation.getRight();
+		}
+		throw new StationNotFoundException("The station you have requested cannot be found on this line!");  
 	}
 
 	public void sortLine() {
@@ -135,9 +187,14 @@ public class TrainLine {
 	}
 
 	public TrainStation[] getLineArray() {
-
-		// YOUR CODE GOES HERE
-		return null; // change this
+		this.lineMap = new TrainStation[this.getSize()];
+		TrainStation currentStation = this.getLeftTerminus();
+		
+		for (int i = 0; i < this.getSize(); i++) {
+			this.lineMap[i] = currentStation;
+			currentStation = currentStation.getRight();
+		}
+		return this.lineMap; 
 	}
 
 	private TrainStation[] shuffleArray(TrainStation[] array) {
