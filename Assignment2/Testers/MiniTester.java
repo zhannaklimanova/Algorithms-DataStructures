@@ -486,7 +486,7 @@ public class MiniTester {
             boolean arrayEqual = true;
 
             TrainStation currentStation = l1.getLeftTerminus();
-            ;
+            
             int index = 0;
             while (!currentStation.isRightTerminal()) {
 

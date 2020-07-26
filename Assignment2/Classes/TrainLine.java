@@ -190,7 +190,7 @@ public class TrainLine {
 		this.lineMap = new TrainStation[this.getSize()];
 		TrainStation currentStation = this.getLeftTerminus();
 		
-		for (int i = 0; i < this.getSize(); i++) {
+		for (int i = 0; i < this.lineMap.length; i++) {
 			this.lineMap[i] = currentStation;
 			currentStation = currentStation.getRight();
 		}
@@ -212,14 +212,50 @@ public class TrainLine {
 
 	public void shuffleLine() {
 
-		// you are given a shuffled array of trainStations to start with
-		TrainStation[] lineArray = this.getLineArray();
+		TrainStation[] lineArray = this.getLineArray(); // lineArray/shuffledArray points to the same thing as the lineMap array
 		TrainStation[] shuffledArray = shuffleArray(lineArray);
 
-		// YOUR CODE GOES HERE
+		adaptFields(this.lineMap);
+		changeLinkedList(shuffledArray);
 
 	}
 
+	public void adaptFields(TrainStation[] stations) {
+
+		for (int i = 0; i < stations.length; i++) {
+			if (i == 0) {
+				stations[0].setNonTerminal();
+				stations[0].setLeftTerminal();
+				stations[0].setLeft(null);
+				stations[0].setRight(stations[1]);
+			}
+			else if (i == stations.length-1) {
+				stations[stations.length-1].setNonTerminal();
+				stations[stations.length-1].setRightTerminal();
+				stations[stations.length-1].setRight(null);
+				stations[stations.length-1].setLeft(stations[stations.length-2]);
+			}
+			else {
+				stations[i].setNonTerminal();
+				stations[i].setLeft(stations[i-1]);
+				stations[i].setRight(stations[i+1]);
+			}
+		}
+	}
+	
+	public void changeLinkedList(TrainStation[] stations) {
+		this.leftTerminus = stations[0];
+		this.rightTerminus = stations[stations.length-1];
+		System.out.println("left" + this.leftTerminus.getName());
+		System.out.println("belly " + this.leftTerminus.getRight().getName());
+		System.out.println("booza " + this.leftTerminus.getRight().getRight().getName());
+		System.out.println("knoww " + this.leftTerminus.getRight().getRight().getRight().getName());
+		System.out.println("johnny " + this.leftTerminus.getRight().getRight().getRight().getRight().getName());
+		
+	
+
+	}
+	
 	public String toString() {
 		TrainStation[] lineArr = this.getLineArray();
 		String[] nameArr = new String[lineArr.length];
