@@ -19,7 +19,7 @@ public class TrainLine {
 		this.leftTerminus.setTrainLine(this);
 		this.rightTerminus.setTrainLine(this);
 		this.lineName = name;
-		this.goingRight = goingRight;
+		this.goingRight = goingRight; 
 
 		this.lineMap = this.getLineArray();
 	}
@@ -145,9 +145,6 @@ public class TrainLine {
 					this.reverseDirection();
 					return startStation.getLeft();
 				}
-//				else if (startStation.getLeft() == null) {
-//					return startStation.getRight();
-//				}
 				else {
 					return startStation.getRight();
 				}
@@ -157,9 +154,6 @@ public class TrainLine {
 					this.reverseDirection();
 					return startStation.getRight();
 				}
-//				else if (startStation.getRight() == null) {
-//					return startStation.getLeft();
-//				}
 				else {
 					return startStation.getLeft();
 				}
@@ -182,8 +176,23 @@ public class TrainLine {
 	}
 
 	public void sortLine() {
-
-		// YOUR CODE GOES HERE
+		this.lineMap = insertionSort(this.getLineArray());
+		adaptFields(this.lineMap);
+	}
+	
+	public TrainStation[] insertionSort(TrainStation[] stations) {
+		for (int k = 1; k < stations.length; k++) {
+			TrainStation elementK = stations[k];
+			int i = k; 
+			
+			
+			while((i > 0) && (elementK.getName().charAt(0) < stations[i-1].getName().charAt(0))) {
+				stations[i] = stations[i-1];
+				i--;
+			}
+			stations[i] = elementK;
+		}
+		return stations;
 	}
 
 	public TrainStation[] getLineArray() {
@@ -198,7 +207,8 @@ public class TrainLine {
 	}
 
 	private TrainStation[] shuffleArray(TrainStation[] array) {
-		Random rand = new Random();
+		int seed = 4;
+		Random rand = new Random(seed);
 
 		for (int i = 0; i < array.length; i++) {
 			int randomIndexToSwap = rand.nextInt(array.length);
@@ -214,9 +224,7 @@ public class TrainLine {
 
 		TrainStation[] lineArray = this.getLineArray(); // lineArray/shuffledArray points to the same thing as the lineMap array
 		TrainStation[] shuffledArray = shuffleArray(lineArray);
-
 		adaptFields(this.lineMap);
-		changeLinkedList(shuffledArray);
 
 	}
 
@@ -241,19 +249,8 @@ public class TrainLine {
 				stations[i].setRight(stations[i+1]);
 			}
 		}
-	}
-	
-	public void changeLinkedList(TrainStation[] stations) {
 		this.leftTerminus = stations[0];
 		this.rightTerminus = stations[stations.length-1];
-		System.out.println("left" + this.leftTerminus.getName());
-		System.out.println("belly " + this.leftTerminus.getRight().getName());
-		System.out.println("booza " + this.leftTerminus.getRight().getRight().getName());
-		System.out.println("knoww " + this.leftTerminus.getRight().getRight().getRight().getName());
-		System.out.println("johnny " + this.leftTerminus.getRight().getRight().getRight().getRight().getName());
-		
-	
-
 	}
 	
 	public String toString() {
