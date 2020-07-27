@@ -60,7 +60,6 @@ public class TrainNetwork {
             hoursCount++;
             previousStation = storeCurStation;
             curLine = curStation.getLine();
-            System.out.println("PENISSSS      "  + curLine.goingRight);
 
             
             if(hoursCount == 168) {

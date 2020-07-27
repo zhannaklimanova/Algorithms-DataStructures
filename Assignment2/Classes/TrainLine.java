@@ -7,7 +7,7 @@ public class TrainLine {
 	private TrainStation leftTerminus;
 	private TrainStation rightTerminus;
 	private String lineName;
-	public boolean goingRight;
+	private boolean goingRight;
 	public TrainStation[] lineMap;
 	public static Random rand;
 
