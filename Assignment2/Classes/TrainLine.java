@@ -1,4 +1,4 @@
-package ass2;
+package assignment2;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -7,7 +7,7 @@ public class TrainLine {
 	private TrainStation leftTerminus;
 	private TrainStation rightTerminus;
 	private String lineName;
-	private boolean goingRight;
+	public boolean goingRight;
 	public TrainStation[] lineMap;
 	public static Random rand;
 
@@ -115,45 +115,55 @@ public class TrainLine {
 		this.goingRight = !this.goingRight;
 	}
 
-	// You can modify the header to this method to handle an exception. You cannot make any other change to the header.
+	
 	public TrainStation travelOneStation(TrainStation current, TrainStation previous) {	
 		TrainStation stationCurrent = findStation(current.getName());
 		
 		if ((stationCurrent.hasConnection == true) && (!stationCurrent.getTransferStation().equals(previous))) {
 //			stationCurrent.getTransferStation().setTrainLine(stationCurrent.getTransferStation().getTransferLine());
-			return stationCurrent.getTransferStation(); // TODO make sure the top doesn't affect anything and lines are transfered w/ train transfers
+			return stationCurrent.getTransferStation(); 
 		}
 		else {
 			return getNext(current); 
 		}
 	}
 
-	// You can modify the header to this method to handle an exception. You cannot make any other change to the header.
+	
 	public TrainStation getNext(TrainStation station) {
 		TrainStation startStation = findStation(station.getName());
 		
 		// cases 
-		/* case 1: (not an edge case) goingRight == true so we go right; else goingRight == false so we go left //
-		   case 2: (edge cases) goingRight == true but we're at rightTerminus so we go left and goingRight becomes false //
+		/* case 1: (not an edge case) goingRight == true so we go right; else goingRight == false so we go left 
+		   case 2: (edge cases) goingRight == true but we're at rightTerminus so we go left and goingRight becomes false 
 		                        goingRight == false but we're at the rightTermins so we go left and goingRight remains false
 		   case 3: (edge cases) goingRight == false but we're at the leftTermins so we go right and goingRight becomes true
-		                        goingRight == true but we're at the leftTerminus so we go right and goingRight remains true // 	
+		                        goingRight == true but we're at the leftTerminus so we go right and goingRight remains true  	
 		*/
 		if (startStation != null) {
 			if (this.goingRight == true) {
-				if (startStation.getRight() == null) {
+				if (startStation.isRightTerminal()) {
 					this.reverseDirection();
 					return startStation.getLeft();
 				}
+				
+//				else if (startStation.isLeftTerminal()) {
+//					return startStation.getRight();
+//				}
+				
 				else {
 					return startStation.getRight();
 				}
 			}
 			else { // this.goingRight == false
-				if (startStation.getLeft() == null) {
+				if (startStation.isLeftTerminal()) {
 					this.reverseDirection();
 					return startStation.getRight();
 				}
+				
+//				else if (startStation.isRightTerminal()) {
+//					return startStation.getLeft();
+//				}
+				
 				else {
 					return startStation.getLeft();
 				}
@@ -162,7 +172,6 @@ public class TrainLine {
 		throw new StationNotFoundException("The station you requested cannot be found!");
 	}
 
-	// You can modify the header to this method to handle an exception. You cannot make any other change to the header.
 	public TrainStation findStation(String name) {
 		TrainStation currentStation = this.getLeftTerminus();
 		
@@ -178,6 +187,7 @@ public class TrainLine {
 	public void sortLine() {
 		this.lineMap = insertionSort(this.getLineArray());
 		adaptFields(this.lineMap);
+//		printLine(); // for testing linkedlist purposes
 	}
 	
 	public TrainStation[] insertionSort(TrainStation[] stations) {
@@ -207,7 +217,7 @@ public class TrainLine {
 	}
 
 	private TrainStation[] shuffleArray(TrainStation[] array) {
-		int seed = 4;
+		int seed = 11;
 		Random rand = new Random(seed);
 
 		for (int i = 0; i < array.length; i++) {
@@ -262,6 +272,13 @@ public class TrainLine {
 		return Arrays.deepToString(nameArr);
 	}
 
+	public void printLine() {
+		System.out.println("1 + leftTerminus" + this.getLeftTerminus().getName());
+		System.out.println("2" + this.getLeftTerminus().getRight().getName());
+		System.out.println("3" + this.getLeftTerminus().getRight().getRight().getName());
+		System.out.println("4" + this.getLeftTerminus().getRight().getRight().getRight().getName());
+		System.out.println("5 + rightTerminus" + this.getRightTerminus().getName());
+	}
 	public boolean equals(TrainLine line2) {
 
 		// check for equality of each station

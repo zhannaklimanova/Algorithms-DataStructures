@@ -1,0 +1,517 @@
+Output for testers
+Seed for random generator is set to 11 for this output to occur.
+
+
+Welcome to the Confusing Railroad!
+CURRENT TRAIN NETWORK PLAN
+----------------------------
+Scarlet:[1.Little Whinging, 2.Wizard Hat, 3.Hogsmeade, 4.Diagon Alley- 1/3, 5.St-Mungos]
+Grey:[1.Gringott's, 2.Diagon Alley - 2/3, 3.Ollivander's, 4.King's Cross - 3/5, 5.Leaky Cauldron]
+Purple:[1.King's Cross - 4/5, 2.Ministry of Magic, 3.Snowy Owl, 4.Godric's Hollow, 5.Hogwarts]
+----------------------------
+***************************************************
+*********Testing for TrainLine methods**********
+***************************************************
+[0]: Test get size.
+Passed: 1/1
+[1]: Test findStation. Station exists.
+Passed: 1/1
+[2]: Test getNext. Station not found
+Passed: 1/1
+[3]: Test getNext. Typical case
+Passed: 2/2
+[4]: Test travelOneStation. Regular case.
+Passed: 2/2
+[5]: Test travelOneStation. Transfer.
+Passed: 2/2
+[6]: Test getLineArray.
+Passed: 1/1
+[7]: Test sortLine.
+Passed: 3/3
+[8]: Test shuffle line.
+Passed: 2/2
+Tests passed is 15/15.
+Remember that the minitester does not account for all possible points. Only up to a maximum of 40%-50%.
+Starting the tests for the class TrainNetwork:
+***************************************************
+*********Testing for TrainNetwork.getLineByName()**********
+***************************************************
+Testing :
+Test 1 (Fetching an existing line from the network): Passed
+Test 2 (Fetching a line that does not exist in the network): Passed
+***************************************************
+*********Testing for TrainNetwork.dance()**********
+***************************************************
+The tracks are moving!
+ Test Passed. All the lines were successfully shuffled.
+***************************************************
+*********Testing for TrainNetwork.undance()**********
+***************************************************
+The tracks are moving!
+The tracks are moving!
+ Test Passed. All the lines were successfully sorted.
+***************************************************
+*********Testing for TrainNetwork.travel()**********
+***************************************************
+Resetting the network.
+CURRENT TRAIN NETWORK PLAN
+----------------------------
+Scarlet:[1.Little Whinging, 2.Wizard Hat, 3.Hogsmeade, 4.Diagon Alley- 1/3, 5.St-Mungos]
+Grey:[1.Gringott's, 2.Diagon Alley - 2/3, 3.Ollivander's, 4.King's Cross - 3/5, 5.Leaky Cauldron]
+Purple:[1.King's Cross - 4/5, 2.Ministry of Magic, 3.Snowy Owl, 4.Godric's Hollow, 5.Hogwarts]
+----------------------------
+Departing from 2.Wizard Hat
+PENISSSS      true
+Traveling on line Scarlet:[1.Little Whinging, 2.Wizard Hat, 3.Hogsmeade, 4.Diagon Alley- 1/3, 5.St-Mungos]
+Hour 1. Current station: 3.Hogsmeade on line Scarlet
+=============================================
+PENISSSS      true
+Traveling on line Scarlet:[1.Little Whinging, 2.Wizard Hat, 3.Hogsmeade, 4.Diagon Alley- 1/3, 5.St-Mungos]
+Hour 2. Current station: 4.Diagon Alley- 1/3 on line Scarlet
+=============================================
+Arrived at destination after 2 hours!
+Test Passed!
+Resetting the network.
+CURRENT TRAIN NETWORK PLAN
+----------------------------
+Scarlet:[1.Little Whinging, 2.Wizard Hat, 3.Hogsmeade, 4.Diagon Alley- 1/3, 5.St-Mungos]
+Grey:[1.Gringott's, 2.Diagon Alley - 2/3, 3.Ollivander's, 4.King's Cross - 3/5, 5.Leaky Cauldron]
+Purple:[1.King's Cross - 4/5, 2.Ministry of Magic, 3.Snowy Owl, 4.Godric's Hollow, 5.Hogwarts]
+----------------------------
+Departing from 2.Wizard Hat
+PENISSSS      true
+Traveling on line Scarlet:[1.Little Whinging, 2.Wizard Hat, 3.Hogsmeade, 4.Diagon Alley- 1/3, 5.St-Mungos]
+Hour 1. Current station: 3.Hogsmeade on line Scarlet
+=============================================
+PENISSSS      true
+Traveling on line Scarlet:[1.Little Whinging, 2.Wizard Hat, 3.Hogsmeade, 4.Diagon Alley- 1/3, 5.St-Mungos]
+Hour 2. Current station: 4.Diagon Alley- 1/3 on line Scarlet
+=============================================
+The tracks are moving!
+PENISSSS      true
+Traveling on line Grey:[2.Diagon Alley - 2/3, 3.Ollivander's, 1.Gringott's, 5.Leaky Cauldron, 4.King's Cross - 3/5]
+Hour 3. Current station: 2.Diagon Alley - 2/3 on line Grey
+=============================================
+PENISSSS      true
+Traveling on line Grey:[2.Diagon Alley - 2/3, 3.Ollivander's, 1.Gringott's, 5.Leaky Cauldron, 4.King's Cross - 3/5]
+Hour 4. Current station: 3.Ollivander's on line Grey
+=============================================
+The tracks are moving!
+PENISSSS      true
+Traveling on line Grey:[3.Ollivander's, 1.Gringott's, 2.Diagon Alley - 2/3, 4.King's Cross - 3/5, 5.Leaky Cauldron]
+Hour 5. Current station: 1.Gringott's on line Grey
+=============================================
+PENISSSS      true
+Traveling on line Grey:[3.Ollivander's, 1.Gringott's, 2.Diagon Alley - 2/3, 4.King's Cross - 3/5, 5.Leaky Cauldron]
+Hour 6. Current station: 2.Diagon Alley - 2/3 on line Grey
+=============================================
+The tracks are moving!
+PENISSSS      true
+Traveling on line Scarlet:[1.Little Whinging, 2.Wizard Hat, 3.Hogsmeade, 5.St-Mungos, 4.Diagon Alley- 1/3]
+Hour 7. Current station: 4.Diagon Alley- 1/3 on line Scarlet
+=============================================
+PENISSSS      false
+Traveling on line Scarlet:[1.Little Whinging, 2.Wizard Hat, 3.Hogsmeade, 5.St-Mungos, 4.Diagon Alley- 1/3]
+Hour 8. Current station: 5.St-Mungos on line Scarlet
+=============================================
+The tracks are moving!
+PENISSSS      false
+Traveling on line Scarlet:[2.Wizard Hat, 3.Hogsmeade, 1.Little Whinging, 4.Diagon Alley- 1/3, 5.St-Mungos]
+Hour 9. Current station: 4.Diagon Alley- 1/3 on line Scarlet
+=============================================
+PENISSSS      true
+Traveling on line Grey:[2.Diagon Alley - 2/3, 3.Ollivander's, 1.Gringott's, 4.King's Cross - 3/5, 5.Leaky Cauldron]
+Hour 10. Current station: 2.Diagon Alley - 2/3 on line Grey
+=============================================
+The tracks are moving!
+PENISSSS      true
+Traveling on line Grey:[3.Ollivander's, 1.Gringott's, 2.Diagon Alley - 2/3, 5.Leaky Cauldron, 4.King's Cross - 3/5]
+Hour 11. Current station: 5.Leaky Cauldron on line Grey
+=============================================
+PENISSSS      true
+Traveling on line Grey:[3.Ollivander's, 1.Gringott's, 2.Diagon Alley - 2/3, 5.Leaky Cauldron, 4.King's Cross - 3/5]
+Hour 12. Current station: 4.King's Cross - 3/5 on line Grey
+=============================================
+The tracks are moving!
+PENISSSS      true
+Traveling on line Purple:[1.King's Cross - 4/5, 2.Ministry of Magic, 3.Snowy Owl, 4.Godric's Hollow, 5.Hogwarts]
+Hour 13. Current station: 1.King's Cross - 4/5 on line Purple
+=============================================
+PENISSSS      true
+Traveling on line Purple:[1.King's Cross - 4/5, 2.Ministry of Magic, 3.Snowy Owl, 4.Godric's Hollow, 5.Hogwarts]
+Hour 14. Current station: 2.Ministry of Magic on line Purple
+=============================================
+The tracks are moving!
+PENISSSS      true
+Traveling on line Purple:[2.Ministry of Magic, 3.Snowy Owl, 1.King's Cross - 4/5, 5.Hogwarts, 4.Godric's Hollow]
+Hour 15. Current station: 3.Snowy Owl on line Purple
+=============================================
+PENISSSS      true
+Traveling on line Purple:[2.Ministry of Magic, 3.Snowy Owl, 1.King's Cross - 4/5, 5.Hogwarts, 4.Godric's Hollow]
+Hour 16. Current station: 1.King's Cross - 4/5 on line Purple
+=============================================
+The tracks are moving!
+PENISSSS      true
+Traveling on line Grey:[3.Ollivander's, 1.Gringott's, 2.Diagon Alley - 2/3, 4.King's Cross - 3/5, 5.Leaky Cauldron]
+Hour 17. Current station: 4.King's Cross - 3/5 on line Grey
+=============================================
+PENISSSS      true
+Traveling on line Grey:[3.Ollivander's, 1.Gringott's, 2.Diagon Alley - 2/3, 4.King's Cross - 3/5, 5.Leaky Cauldron]
+Hour 18. Current station: 5.Leaky Cauldron on line Grey
+=============================================
+The tracks are moving!
+PENISSSS      true
+Traveling on line Grey:[1.Gringott's, 2.Diagon Alley - 2/3, 3.Ollivander's, 5.Leaky Cauldron, 4.King's Cross - 3/5]
+Hour 19. Current station: 4.King's Cross - 3/5 on line Grey
+=============================================
+PENISSSS      true
+Traveling on line Purple:[1.King's Cross - 4/5, 2.Ministry of Magic, 3.Snowy Owl, 5.Hogwarts, 4.Godric's Hollow]
+Hour 20. Current station: 1.King's Cross - 4/5 on line Purple
+=============================================
+The tracks are moving!
+PENISSSS      true
+Traveling on line Purple:[2.Ministry of Magic, 3.Snowy Owl, 1.King's Cross - 4/5, 4.Godric's Hollow, 5.Hogwarts]
+Hour 21. Current station: 4.Godric's Hollow on line Purple
+=============================================
+PENISSSS      true
+Traveling on line Purple:[2.Ministry of Magic, 3.Snowy Owl, 1.King's Cross - 4/5, 4.Godric's Hollow, 5.Hogwarts]
+Hour 22. Current station: 5.Hogwarts on line Purple
+=============================================
+The tracks are moving!
+PENISSSS      true
+Traveling on line Purple:[3.Snowy Owl, 1.King's Cross - 4/5, 2.Ministry of Magic, 5.Hogwarts, 4.Godric's Hollow]
+Hour 23. Current station: 4.Godric's Hollow on line Purple
+=============================================
+PENISSSS      false
+Traveling on line Purple:[3.Snowy Owl, 1.King's Cross - 4/5, 2.Ministry of Magic, 5.Hogwarts, 4.Godric's Hollow]
+Hour 24. Current station: 5.Hogwarts on line Purple
+=============================================
+The tracks are moving!
+PENISSSS      false
+Traveling on line Purple:[1.King's Cross - 4/5, 2.Ministry of Magic, 3.Snowy Owl, 4.Godric's Hollow, 5.Hogwarts]
+Hour 25. Current station: 4.Godric's Hollow on line Purple
+=============================================
+PENISSSS      false
+Traveling on line Purple:[1.King's Cross - 4/5, 2.Ministry of Magic, 3.Snowy Owl, 4.Godric's Hollow, 5.Hogwarts]
+Hour 26. Current station: 3.Snowy Owl on line Purple
+=============================================
+The tracks are moving!
+PENISSSS      false
+Traveling on line Purple:[2.Ministry of Magic, 3.Snowy Owl, 1.King's Cross - 4/5, 5.Hogwarts, 4.Godric's Hollow]
+Hour 27. Current station: 2.Ministry of Magic on line Purple
+=============================================
+PENISSSS      true
+Traveling on line Purple:[2.Ministry of Magic, 3.Snowy Owl, 1.King's Cross - 4/5, 5.Hogwarts, 4.Godric's Hollow]
+Hour 28. Current station: 3.Snowy Owl on line Purple
+=============================================
+The tracks are moving!
+PENISSSS      true
+Traveling on line Purple:[3.Snowy Owl, 1.King's Cross - 4/5, 2.Ministry of Magic, 4.Godric's Hollow, 5.Hogwarts]
+Hour 29. Current station: 1.King's Cross - 4/5 on line Purple
+=============================================
+PENISSSS      true
+Traveling on line Grey:[3.Ollivander's, 1.Gringott's, 2.Diagon Alley - 2/3, 4.King's Cross - 3/5, 5.Leaky Cauldron]
+Hour 30. Current station: 4.King's Cross - 3/5 on line Grey
+=============================================
+The tracks are moving!
+PENISSSS      false
+Traveling on line Grey:[1.Gringott's, 2.Diagon Alley - 2/3, 3.Ollivander's, 5.Leaky Cauldron, 4.King's Cross - 3/5]
+Hour 31. Current station: 5.Leaky Cauldron on line Grey
+=============================================
+PENISSSS      false
+Traveling on line Grey:[1.Gringott's, 2.Diagon Alley - 2/3, 3.Ollivander's, 5.Leaky Cauldron, 4.King's Cross - 3/5]
+Hour 32. Current station: 3.Ollivander's on line Grey
+=============================================
+The tracks are moving!
+PENISSSS      false
+Traveling on line Grey:[2.Diagon Alley - 2/3, 3.Ollivander's, 1.Gringott's, 4.King's Cross - 3/5, 5.Leaky Cauldron]
+Hour 33. Current station: 2.Diagon Alley - 2/3 on line Grey
+=============================================
+PENISSSS      false
+Traveling on line Scarlet:[2.Wizard Hat, 3.Hogsmeade, 1.Little Whinging, 4.Diagon Alley- 1/3, 5.St-Mungos]
+Hour 34. Current station: 4.Diagon Alley- 1/3 on line Scarlet
+=============================================
+The tracks are moving!
+PENISSSS      false
+Traveling on line Scarlet:[3.Hogsmeade, 1.Little Whinging, 2.Wizard Hat, 5.St-Mungos, 4.Diagon Alley- 1/3]
+Hour 35. Current station: 5.St-Mungos on line Scarlet
+=============================================
+PENISSSS      false
+Traveling on line Scarlet:[3.Hogsmeade, 1.Little Whinging, 2.Wizard Hat, 5.St-Mungos, 4.Diagon Alley- 1/3]
+Hour 36. Current station: 2.Wizard Hat on line Scarlet
+=============================================
+The tracks are moving!
+PENISSSS      false
+Traveling on line Scarlet:[1.Little Whinging, 2.Wizard Hat, 3.Hogsmeade, 4.Diagon Alley- 1/3, 5.St-Mungos]
+Hour 37. Current station: 1.Little Whinging on line Scarlet
+=============================================
+Arrived at destination after 37 hours!
+Test Passed!
+Resetting the network.
+CURRENT TRAIN NETWORK PLAN
+----------------------------
+Scarlet:[1.Little Whinging, 2.Wizard Hat, 3.Hogsmeade, 4.Diagon Alley- 1/3, 5.St-Mungos]
+Grey:[1.Gringott's, 2.Diagon Alley - 2/3, 3.Ollivander's, 4.King's Cross - 3/5, 5.Leaky Cauldron]
+Purple:[1.King's Cross - 4/5, 2.Ministry of Magic, 3.Snowy Owl, 4.Godric's Hollow, 5.Hogwarts]
+----------------------------
+Departing from 1.King's Cross - 4/5
+PENISSSS      true
+Traveling on line Grey:[1.Gringott's, 2.Diagon Alley - 2/3, 3.Ollivander's, 4.King's Cross - 3/5, 5.Leaky Cauldron]
+Hour 1. Current station: 4.King's Cross - 3/5 on line Grey
+=============================================
+PENISSSS      true
+Traveling on line Grey:[1.Gringott's, 2.Diagon Alley - 2/3, 3.Ollivander's, 4.King's Cross - 3/5, 5.Leaky Cauldron]
+Hour 2. Current station: 5.Leaky Cauldron on line Grey
+=============================================
+Arrived at destination after 2 hours!
+Test Passed!
+Resetting the network.
+CURRENT TRAIN NETWORK PLAN
+----------------------------
+Scarlet:[1.Little Whinging, 2.Wizard Hat, 3.Hogsmeade, 4.Diagon Alley- 1/3, 5.St-Mungos]
+Grey:[1.Gringott's, 2.Diagon Alley - 2/3, 3.Ollivander's, 4.King's Cross - 3/5, 5.Leaky Cauldron]
+Purple:[1.King's Cross - 4/5, 2.Ministry of Magic, 3.Snowy Owl, 4.Godric's Hollow, 5.Hogwarts]
+----------------------------
+Departing from 1.King's Cross - 4/5
+PENISSSS      true
+Traveling on line Grey:[1.Gringott's, 2.Diagon Alley - 2/3, 3.Ollivander's, 4.King's Cross - 3/5, 5.Leaky Cauldron]
+Hour 1. Current station: 4.King's Cross - 3/5 on line Grey
+=============================================
+PENISSSS      true
+Traveling on line Grey:[1.Gringott's, 2.Diagon Alley - 2/3, 3.Ollivander's, 4.King's Cross - 3/5, 5.Leaky Cauldron]
+Hour 2. Current station: 5.Leaky Cauldron on line Grey
+=============================================
+The tracks are moving!
+PENISSSS      true
+Traveling on line Grey:[2.Diagon Alley - 2/3, 3.Ollivander's, 1.Gringott's, 5.Leaky Cauldron, 4.King's Cross - 3/5]
+Hour 3. Current station: 4.King's Cross - 3/5 on line Grey
+=============================================
+PENISSSS      true
+Traveling on line Purple:[2.Ministry of Magic, 3.Snowy Owl, 1.King's Cross - 4/5, 5.Hogwarts, 4.Godric's Hollow]
+Hour 4. Current station: 1.King's Cross - 4/5 on line Purple
+=============================================
+The tracks are moving!
+PENISSSS      true
+Traveling on line Purple:[3.Snowy Owl, 1.King's Cross - 4/5, 2.Ministry of Magic, 4.Godric's Hollow, 5.Hogwarts]
+Hour 5. Current station: 2.Ministry of Magic on line Purple
+=============================================
+PENISSSS      true
+Traveling on line Purple:[3.Snowy Owl, 1.King's Cross - 4/5, 2.Ministry of Magic, 4.Godric's Hollow, 5.Hogwarts]
+Hour 6. Current station: 4.Godric's Hollow on line Purple
+=============================================
+The tracks are moving!
+PENISSSS      false
+Traveling on line Purple:[1.King's Cross - 4/5, 2.Ministry of Magic, 3.Snowy Owl, 5.Hogwarts, 4.Godric's Hollow]
+Hour 7. Current station: 5.Hogwarts on line Purple
+=============================================
+PENISSSS      false
+Traveling on line Purple:[1.King's Cross - 4/5, 2.Ministry of Magic, 3.Snowy Owl, 5.Hogwarts, 4.Godric's Hollow]
+Hour 8. Current station: 3.Snowy Owl on line Purple
+=============================================
+The tracks are moving!
+PENISSSS      false
+Traveling on line Purple:[2.Ministry of Magic, 3.Snowy Owl, 1.King's Cross - 4/5, 4.Godric's Hollow, 5.Hogwarts]
+Hour 9. Current station: 2.Ministry of Magic on line Purple
+=============================================
+PENISSSS      true
+Traveling on line Purple:[2.Ministry of Magic, 3.Snowy Owl, 1.King's Cross - 4/5, 4.Godric's Hollow, 5.Hogwarts]
+Hour 10. Current station: 3.Snowy Owl on line Purple
+=============================================
+The tracks are moving!
+PENISSSS      true
+Traveling on line Purple:[3.Snowy Owl, 1.King's Cross - 4/5, 2.Ministry of Magic, 5.Hogwarts, 4.Godric's Hollow]
+Hour 11. Current station: 1.King's Cross - 4/5 on line Purple
+=============================================
+PENISSSS      true
+Traveling on line Grey:[3.Ollivander's, 1.Gringott's, 2.Diagon Alley - 2/3, 5.Leaky Cauldron, 4.King's Cross - 3/5]
+Hour 12. Current station: 4.King's Cross - 3/5 on line Grey
+=============================================
+The tracks are moving!
+PENISSSS      true
+Traveling on line Grey:[1.Gringott's, 2.Diagon Alley - 2/3, 3.Ollivander's, 4.King's Cross - 3/5, 5.Leaky Cauldron]
+Hour 13. Current station: 5.Leaky Cauldron on line Grey
+=============================================
+PENISSSS      false
+Traveling on line Grey:[1.Gringott's, 2.Diagon Alley - 2/3, 3.Ollivander's, 4.King's Cross - 3/5, 5.Leaky Cauldron]
+Hour 14. Current station: 4.King's Cross - 3/5 on line Grey
+=============================================
+The tracks are moving!
+PENISSSS      true
+Traveling on line Purple:[2.Ministry of Magic, 3.Snowy Owl, 1.King's Cross - 4/5, 5.Hogwarts, 4.Godric's Hollow]
+Hour 15. Current station: 1.King's Cross - 4/5 on line Purple
+=============================================
+PENISSSS      true
+Traveling on line Purple:[2.Ministry of Magic, 3.Snowy Owl, 1.King's Cross - 4/5, 5.Hogwarts, 4.Godric's Hollow]
+Hour 16. Current station: 5.Hogwarts on line Purple
+=============================================
+The tracks are moving!
+PENISSSS      false
+Traveling on line Purple:[3.Snowy Owl, 1.King's Cross - 4/5, 2.Ministry of Magic, 4.Godric's Hollow, 5.Hogwarts]
+Hour 17. Current station: 4.Godric's Hollow on line Purple
+=============================================
+PENISSSS      false
+Traveling on line Purple:[3.Snowy Owl, 1.King's Cross - 4/5, 2.Ministry of Magic, 4.Godric's Hollow, 5.Hogwarts]
+Hour 18. Current station: 2.Ministry of Magic on line Purple
+=============================================
+The tracks are moving!
+PENISSSS      false
+Traveling on line Purple:[1.King's Cross - 4/5, 2.Ministry of Magic, 3.Snowy Owl, 5.Hogwarts, 4.Godric's Hollow]
+Hour 19. Current station: 1.King's Cross - 4/5 on line Purple
+=============================================
+PENISSSS      false
+Traveling on line Grey:[1.Gringott's, 2.Diagon Alley - 2/3, 3.Ollivander's, 5.Leaky Cauldron, 4.King's Cross - 3/5]
+Hour 20. Current station: 4.King's Cross - 3/5 on line Grey
+=============================================
+The tracks are moving!
+PENISSSS      false
+Traveling on line Grey:[2.Diagon Alley - 2/3, 3.Ollivander's, 1.Gringott's, 4.King's Cross - 3/5, 5.Leaky Cauldron]
+Hour 21. Current station: 1.Gringott's on line Grey
+=============================================
+PENISSSS      false
+Traveling on line Grey:[2.Diagon Alley - 2/3, 3.Ollivander's, 1.Gringott's, 4.King's Cross - 3/5, 5.Leaky Cauldron]
+Hour 22. Current station: 3.Ollivander's on line Grey
+=============================================
+The tracks are moving!
+PENISSSS      true
+Traveling on line Grey:[3.Ollivander's, 1.Gringott's, 2.Diagon Alley - 2/3, 5.Leaky Cauldron, 4.King's Cross - 3/5]
+Hour 23. Current station: 1.Gringott's on line Grey
+=============================================
+PENISSSS      true
+Traveling on line Grey:[3.Ollivander's, 1.Gringott's, 2.Diagon Alley - 2/3, 5.Leaky Cauldron, 4.King's Cross - 3/5]
+Hour 24. Current station: 2.Diagon Alley - 2/3 on line Grey
+=============================================
+The tracks are moving!
+PENISSSS      true
+Traveling on line Scarlet:[1.Little Whinging, 2.Wizard Hat, 3.Hogsmeade, 4.Diagon Alley- 1/3, 5.St-Mungos]
+Hour 25. Current station: 4.Diagon Alley- 1/3 on line Scarlet
+=============================================
+PENISSSS      true
+Traveling on line Scarlet:[1.Little Whinging, 2.Wizard Hat, 3.Hogsmeade, 4.Diagon Alley- 1/3, 5.St-Mungos]
+Hour 26. Current station: 5.St-Mungos on line Scarlet
+=============================================
+The tracks are moving!
+PENISSSS      true
+Traveling on line Scarlet:[2.Wizard Hat, 3.Hogsmeade, 1.Little Whinging, 5.St-Mungos, 4.Diagon Alley- 1/3]
+Hour 27. Current station: 4.Diagon Alley- 1/3 on line Scarlet
+=============================================
+PENISSSS      true
+Traveling on line Grey:[2.Diagon Alley - 2/3, 3.Ollivander's, 1.Gringott's, 5.Leaky Cauldron, 4.King's Cross - 3/5]
+Hour 28. Current station: 2.Diagon Alley - 2/3 on line Grey
+=============================================
+The tracks are moving!
+PENISSSS      true
+Traveling on line Grey:[3.Ollivander's, 1.Gringott's, 2.Diagon Alley - 2/3, 4.King's Cross - 3/5, 5.Leaky Cauldron]
+Hour 29. Current station: 4.King's Cross - 3/5 on line Grey
+=============================================
+PENISSSS      false
+Traveling on line Purple:[3.Snowy Owl, 1.King's Cross - 4/5, 2.Ministry of Magic, 4.Godric's Hollow, 5.Hogwarts]
+Hour 30. Current station: 1.King's Cross - 4/5 on line Purple
+=============================================
+The tracks are moving!
+PENISSSS      true
+Traveling on line Purple:[1.King's Cross - 4/5, 2.Ministry of Magic, 3.Snowy Owl, 5.Hogwarts, 4.Godric's Hollow]
+Hour 31. Current station: 2.Ministry of Magic on line Purple
+=============================================
+PENISSSS      true
+Traveling on line Purple:[1.King's Cross - 4/5, 2.Ministry of Magic, 3.Snowy Owl, 5.Hogwarts, 4.Godric's Hollow]
+Hour 32. Current station: 3.Snowy Owl on line Purple
+=============================================
+The tracks are moving!
+PENISSSS      true
+Traveling on line Purple:[2.Ministry of Magic, 3.Snowy Owl, 1.King's Cross - 4/5, 4.Godric's Hollow, 5.Hogwarts]
+Hour 33. Current station: 1.King's Cross - 4/5 on line Purple
+=============================================
+PENISSSS      true
+Traveling on line Grey:[2.Diagon Alley - 2/3, 3.Ollivander's, 1.Gringott's, 4.King's Cross - 3/5, 5.Leaky Cauldron]
+Hour 34. Current station: 4.King's Cross - 3/5 on line Grey
+=============================================
+The tracks are moving!
+PENISSSS      false
+Traveling on line Grey:[3.Ollivander's, 1.Gringott's, 2.Diagon Alley - 2/3, 5.Leaky Cauldron, 4.King's Cross - 3/5]
+Hour 35. Current station: 5.Leaky Cauldron on line Grey
+=============================================
+PENISSSS      false
+Traveling on line Grey:[3.Ollivander's, 1.Gringott's, 2.Diagon Alley - 2/3, 5.Leaky Cauldron, 4.King's Cross - 3/5]
+Hour 36. Current station: 2.Diagon Alley - 2/3 on line Grey
+=============================================
+The tracks are moving!
+PENISSSS      true
+Traveling on line Scarlet:[1.Little Whinging, 2.Wizard Hat, 3.Hogsmeade, 4.Diagon Alley- 1/3, 5.St-Mungos]
+Hour 37. Current station: 4.Diagon Alley- 1/3 on line Scarlet
+=============================================
+PENISSSS      true
+Traveling on line Scarlet:[1.Little Whinging, 2.Wizard Hat, 3.Hogsmeade, 4.Diagon Alley- 1/3, 5.St-Mungos]
+Hour 38. Current station: 5.St-Mungos on line Scarlet
+=============================================
+The tracks are moving!
+PENISSSS      true
+Traveling on line Scarlet:[2.Wizard Hat, 3.Hogsmeade, 1.Little Whinging, 5.St-Mungos, 4.Diagon Alley- 1/3]
+Hour 39. Current station: 4.Diagon Alley- 1/3 on line Scarlet
+=============================================
+PENISSSS      false
+Traveling on line Grey:[2.Diagon Alley - 2/3, 3.Ollivander's, 1.Gringott's, 5.Leaky Cauldron, 4.King's Cross - 3/5]
+Hour 40. Current station: 2.Diagon Alley - 2/3 on line Grey
+=============================================
+The tracks are moving!
+PENISSSS      false
+Traveling on line Grey:[3.Ollivander's, 1.Gringott's, 2.Diagon Alley - 2/3, 4.King's Cross - 3/5, 5.Leaky Cauldron]
+Hour 41. Current station: 1.Gringott's on line Grey
+=============================================
+PENISSSS      false
+Traveling on line Grey:[3.Ollivander's, 1.Gringott's, 2.Diagon Alley - 2/3, 4.King's Cross - 3/5, 5.Leaky Cauldron]
+Hour 42. Current station: 3.Ollivander's on line Grey
+=============================================
+The tracks are moving!
+PENISSSS      false
+Traveling on line Grey:[1.Gringott's, 2.Diagon Alley - 2/3, 3.Ollivander's, 5.Leaky Cauldron, 4.King's Cross - 3/5]
+Hour 43. Current station: 2.Diagon Alley - 2/3 on line Grey
+=============================================
+PENISSSS      true
+Traveling on line Scarlet:[1.Little Whinging, 2.Wizard Hat, 3.Hogsmeade, 5.St-Mungos, 4.Diagon Alley- 1/3]
+Hour 44. Current station: 4.Diagon Alley- 1/3 on line Scarlet
+=============================================
+The tracks are moving!
+PENISSSS      true
+Traveling on line Scarlet:[2.Wizard Hat, 3.Hogsmeade, 1.Little Whinging, 4.Diagon Alley- 1/3, 5.St-Mungos]
+Hour 45. Current station: 5.St-Mungos on line Scarlet
+=============================================
+PENISSSS      false
+Traveling on line Scarlet:[2.Wizard Hat, 3.Hogsmeade, 1.Little Whinging, 4.Diagon Alley- 1/3, 5.St-Mungos]
+Hour 46. Current station: 4.Diagon Alley- 1/3 on line Scarlet
+=============================================
+The tracks are moving!
+PENISSSS      false
+Traveling on line Grey:[3.Ollivander's, 1.Gringott's, 2.Diagon Alley - 2/3, 5.Leaky Cauldron, 4.King's Cross - 3/5]
+Hour 47. Current station: 2.Diagon Alley - 2/3 on line Grey
+=============================================
+PENISSSS      false
+Traveling on line Grey:[3.Ollivander's, 1.Gringott's, 2.Diagon Alley - 2/3, 5.Leaky Cauldron, 4.King's Cross - 3/5]
+Hour 48. Current station: 1.Gringott's on line Grey
+=============================================
+The tracks are moving!
+PENISSSS      true
+Traveling on line Grey:[1.Gringott's, 2.Diagon Alley - 2/3, 3.Ollivander's, 4.King's Cross - 3/5, 5.Leaky Cauldron]
+Hour 49. Current station: 2.Diagon Alley - 2/3 on line Grey
+=============================================
+PENISSSS      false
+Traveling on line Scarlet:[1.Little Whinging, 2.Wizard Hat, 3.Hogsmeade, 4.Diagon Alley- 1/3, 5.St-Mungos]
+Hour 50. Current station: 4.Diagon Alley- 1/3 on line Scarlet
+=============================================
+The tracks are moving!
+PENISSSS      false
+Traveling on line Scarlet:[2.Wizard Hat, 3.Hogsmeade, 1.Little Whinging, 5.St-Mungos, 4.Diagon Alley- 1/3]
+Hour 51. Current station: 5.St-Mungos on line Scarlet
+=============================================
+PENISSSS      false
+Traveling on line Scarlet:[2.Wizard Hat, 3.Hogsmeade, 1.Little Whinging, 5.St-Mungos, 4.Diagon Alley- 1/3]
+Hour 52. Current station: 1.Little Whinging on line Scarlet
+=============================================
+Arrived at destination after 52 hours!
+Test Passed!
+**********************************************
+****** Test Summary for TrainNetwork *****
+**********************************************
+TrainNetwork.getLineByName : Test passed - 2/2
+TrainNetwork.dance : Test passed - 3/3
+TrainNetwork.undance : Test passed - 3/3
+TrainNetwork.travel : Test passed - 4/4

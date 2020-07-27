@@ -1,3 +1,5 @@
+package assignment2;
+
 public class TrainStation {
 	
 	private TrainStation left;

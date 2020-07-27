@@ -1,4 +1,4 @@
-
+package assignment2;
 public class tester {
 
     public static void main(String[] args) {
@@ -15,7 +15,7 @@ public class tester {
 
         int score = 0;
         int testIdx = 0;
-        // TODO Auto-generated method stub
+
         MiniTester m = new MiniTester();
         score += m.testGetSize0(testIdx ++);
         score += m.testFindStation0(testIdx ++);
@@ -224,7 +224,6 @@ public class tester {
         else
             System.out.println("Test Failed!");
 
-
         //correct answer - 52 hours.
 
         String testNameArray[] = new String[]{"TrainNetwork.getLineByName", "TrainNetwork.dance", "TrainNetwork.undance","TrainNetwork.travel"};
@@ -294,17 +293,6 @@ public class tester {
         l1.addStation(s3);
         TrainStation s4 = new TrainStation("4.Diagon Alley- 1/3");
         l1.addStation(s4);
-
-        /*
-        TrainStation s1 = new TrainStation("1.Little Whinging");
-        TrainStation s5 = new TrainStation("5.St-Mungos");
-
-        TrainStation s2 = new TrainStation("2.Wizard Hat");
-        TrainStation s3 = new TrainStation("3.Hogsmeade");
-        TrainStation s4 = new TrainStation("4.Diagon Alley- 1/3");
-
-        TrainLine l1 = new TrainLine(new TrainStation[]{s1, s2, s3, s4, s5}, "Scarlet", true);
-*/
 
         //creating line 2
         TrainStation t1 = new TrainStation("1.Gringott's");
