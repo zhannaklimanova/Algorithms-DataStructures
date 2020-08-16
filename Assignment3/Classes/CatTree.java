@@ -1,7 +1,7 @@
 package assignment3;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.NoSuchElementException; 
+import java.util.NoSuchElementException;
 
 
 public class CatTree implements Iterable<CatInfo>{
@@ -52,12 +52,12 @@ public class CatTree implements Iterable<CatInfo>{
     }
     
 
-    private void inOrderTraversal(CatNode currentNode, ArrayList<CatInfo> list) { 
-        if (currentNode.senior != null) inOrderTraversal(currentNode.senior, list);
-        if (currentNode.same != null) inOrderTraversal(currentNode.same, list);
-        list.add(currentNode.data);
-        if (currentNode.junior != null) inOrderTraversal(currentNode.junior, list);
-    }
+//    private void inOrderTraversal(CatNode currentNode, ArrayList<CatInfo> list) { 
+//      if (currentNode.senior != null) inOrderTraversal(currentNode.senior, list);
+//      if (currentNode.same != null) inOrderTraversal(currentNode.same, list);
+//      list.add(currentNode.data);
+//      if (currentNode.junior != null) inOrderTraversal(currentNode.junior, list);
+//    }
     
     class CatNode {
         
@@ -72,7 +72,7 @@ public class CatTree implements Iterable<CatInfo>{
             this.same = null;
             this.junior = null;
         }
-        
+
         public String toString() {
             String result = this.data.toString() + "\n";
             if (this.senior != null) {
@@ -221,47 +221,62 @@ public class CatTree implements Iterable<CatInfo>{
         }
        
         
+        // Not particularly efficient
+//        public int hiredFromMonths(int monthMin, int monthMax) { 
+//          int count = 0;
+//          try {
+//              ArrayList<CatInfo> cats = new ArrayList<CatInfo>();
+//              inOrderTraversal(root, cats);
+//              int start = binarySearch(cats, monthMin);
+//                  
+//              for (int i = start; i < cats.size(); i++) {
+//                  if ((cats.get(i).monthHired >= monthMin) && (cats.get(i).monthHired <= monthMax)) {
+//                          count++;
+//                  }
+//              }
+//              return count;
+//          }
+//          catch (Exception e) {
+//              System.out.println("Element not");
+//          }
+//            return count;
+//        } 
         
         public int hiredFromMonths(int monthMin, int monthMax) {
-            int count = 0;
-            try {
-                ArrayList<CatInfo> cats = new ArrayList<CatInfo>();
-                inOrderTraversal(root, cats);
-                int start = binarySearch(cats, monthMin);
-                    
-                for (int i = start; i < cats.size(); i++) {
-                    if ((cats.get(i).monthHired >= monthMin) && (cats.get(i).monthHired <= monthMax)) {
-                            count++;
-                    }
+            CatTree cats = new CatTree(this);
+            int catsHired = 0;
+            if (monthMin > monthMax) {
+                return 0;
+            }
+            
+            for (CatInfo c: cats) {
+                if (c.monthHired >= monthMin && c.monthHired <= monthMax) {
+                    catsHired++;
                 }
-                return count;
             }
-            catch (Exception e) {
-                System.out.println("Element not");
-            }
-            return count;
+            return catsHired;
         } 
         
-        private int binarySearch(ArrayList<CatInfo> list, int elementToFind) {
-            int left = 0;
-            int right = list.size()-1;
-            
-            while(left <= right) {
-                int middle = (left+right)/2;
-                if (list.get(middle).monthHired == elementToFind) {
-                    return middle;
-                }
-                else {
-                    if (elementToFind < list.get(middle).monthHired) {
-                        right = middle-1;
-                    }
-                    else {
-                        left = middle+1;
-                    }
-                }
-            }
-            return -1; // if elementToFind is not in list
-        }
+//        private int binarySearch(ArrayList<CatInfo> list, int elementToFind) {
+//          int left = 0;
+//          int right = list.size()-1;
+//          
+//          while(left <= right) {
+//              int middle = (left+right)/2;
+//              if (list.get(middle).monthHired == elementToFind) {
+//                  return middle;
+//              }
+//              else {
+//                  if (elementToFind < list.get(middle).monthHired) {
+//                      right = middle-1;
+//                  }
+//                  else {
+//                      left = middle+1;
+//                  }
+//              }
+//          }
+//          return -1; // if elementToFind is not in list
+//        }
         
         
         public CatInfo fluffiestFromMonth(int month) {
@@ -280,28 +295,55 @@ public class CatTree implements Iterable<CatInfo>{
         }
         
         public int[] costPlanning(int nbMonths) {
-            // ADD YOUR CODE HERE
-            return null; // DON'T FORGET TO MODIFY THE RETURN IF NEED BE
+            int[] monthlySpending = new int[nbMonths];
+            CatTree cats = new CatTree(this);
+            int counterAppointment = 243;
+
+            for (CatInfo c: cats) {
+                if (c.nextGroomingAppointment - counterAppointment < monthlySpending.length) {
+                    monthlySpending[c.nextGroomingAppointment - counterAppointment] += c.expectedGroomingCost;
+                }
+                else {
+                    continue;
+                }
+            }
+            return monthlySpending; 
         }
-        
     }
     
     private class CatTreeIterator implements Iterator<CatInfo> {
+       ArrayList<CatInfo> cats = new ArrayList<CatInfo>(30);
+       private int i = 0;
        
-        public CatTreeIterator() {
-
-        }
+       public CatTreeIterator() {
+            inOrderTraversal(root, cats);
+       }
         
-        public CatInfo next(){
-            //YOUR CODE GOES HERE
-            return null; // DON'T FORGET TO MODIFY THE RETURN IF NEED BE
-        }
+       public CatInfo next(){
+           if ((cats.get(i)) != null) {
+               return cats.get(i++);
+           }
+           else {
+               throw new NoSuchElementException("No cat.");
+           }
+       }
         
-        public boolean hasNext() {
-            //YOUR CODE GOES HERE
-            return false; // DON'T FORGET TO MODIFY THE RETURN IF NEED BE
-        }
-    }
+       public boolean hasNext() {
+           if (i < cats.size()) {
+               return true;
+           }
+           return false;
+           
+       }
+       
+       private void inOrderTraversal(CatNode currentNode, ArrayList<CatInfo> list) { 
+           if (currentNode.senior != null) inOrderTraversal(currentNode.senior, list);
+           if (currentNode.same != null) inOrderTraversal(currentNode.same, list);
+           list.add(currentNode.data);
+           if (currentNode.junior != null) inOrderTraversal(currentNode.junior, list);
+       }
+   }
+    
     
 }
 

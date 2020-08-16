@@ -900,38 +900,126 @@ public class MiniTester
 	
 //	//----------------------------------------------------------------------------------------------------------------------
 //	//COSTPLANNING
-//	private int test_costPlan_0(int testIdx) 
-//	{
-//		String comment = "[" + testIdx + "]: Test costPlanning - test 0.\n";
-//		int maxScore = 2;
-//		int grade = 0;
-//
-//		try {
-//			CatInfo a = new CatInfo("A", 100, 40, 243, 20);
-//			CatInfo c = new CatInfo("C", 125, 75, 248, 20);
-//			CatInfo d = new CatInfo("D", 100, 15, 245, 20);
-//									
-//			CatTree t = new CatTree(a);
-//			t.addCat(c);
-//			t.addCat(d);
-//						
-//			int []plan = t.root.costPlanning(75);
-//			if (plan.length == 75) {
-//				grade += 2;
-//			} else {
-//				comment = comment + "Error: costPlanning did not return an array of required size.\n";
-//			}
-//						
-//			write(gradeString(grade, maxScore, comment));	
-//
-//		} catch (Exception e) {
-//			comment = comment + "Exception Found: " + e.toString() + "\n";
-//			e.printStackTrace();
-//			write(gradeString(0, maxScore, comment));
-//		}
-//
-//		return grade;
-//	}
+	private int test_costPlan_0(int testIdx) 
+	{
+		String comment = "[" + testIdx + "]: Test costPlanning - test 0.\n";
+		int maxScore = 2;
+		int grade = 0;
+
+		try {
+			CatInfo a = new CatInfo("A", 100, 40, 243, 20);
+			CatInfo c = new CatInfo("C", 125, 75, 248, 20);
+			CatInfo d = new CatInfo("D", 100, 15, 245, 20);
+									
+			CatTree t = new CatTree(a);
+			t.addCat(c);
+			t.addCat(d);
+						
+			int []plan = t.root.costPlanning(75);
+			if (plan.length == 75) {
+				grade += 2;
+			} else {
+				comment = comment + "Error: costPlanning did not return an array of required size.\n";
+			}
+						
+			write(gradeString(grade, maxScore, comment));	
+
+		} catch (Exception e) {
+			comment = comment + "Exception Found: " + e.toString() + "\n";
+			e.printStackTrace();
+			write(gradeString(0, maxScore, comment));
+		}
+
+		return grade;
+	}
+	
+	private int test_costPlan_1(int testIdx) 
+	{
+		String comment = "[" + testIdx + "]: Test costPlanning - test 1.\n";
+		int maxScore = 2;
+		int grade = 0;
+
+		try {
+			CatInfo c = new CatInfo("C", 87, 55, 249, 23);
+			CatInfo a = new CatInfo("A", 87, 50, 250, 35);
+			CatInfo f = new CatInfo("F", 85, 60, 249, 26);
+			CatInfo b = new CatInfo("B", 88, 60, 248, 50);
+			CatInfo d = new CatInfo("D", 85, 50, 247, 5);
+			CatInfo g = new CatInfo("G", 86, 55, 249, 11);
+			CatInfo e = new CatInfo("E", 85, 45, 246, 42);
+			CatInfo h = new CatInfo("H", 95, 55, 244, 46);
+			
+			CatTree t = new CatTree(c);
+			
+			t.addCat(a);
+			t.addCat(f);
+			t.addCat(b);
+			t.addCat(d);
+			t.addCat(e);
+			t.addCat(h);
+			t.addCat(g);
+						
+			int []plan = t.root.costPlanning(7);
+			if (plan.length == 7) { 
+				grade += 2;
+			} else {
+				comment = comment + "Error: costPlanning did not return an array of required size.\n";
+			}
+						
+			write(gradeString(grade, maxScore, comment));	
+
+		} catch (Exception e) {
+			comment = comment + "Exception Found: " + e.toString() + "\n";
+			e.printStackTrace();
+			write(gradeString(0, maxScore, comment));
+		}
+
+		return grade;
+	}
+	
+	private int test_costPlan_2(int testIdx) 
+	{
+		String comment = "[" + testIdx + "]: Test costPlanning - test 2.\n";
+		int maxScore = 2;
+		int grade = 0;
+
+		try {
+			CatInfo c = new CatInfo("C", 87, 55, 249, 23);
+			CatInfo a = new CatInfo("A", 87, 50, 250, 35);
+			CatInfo f = new CatInfo("F", 85, 60, 249, 26);
+			CatInfo b = new CatInfo("B", 88, 60, 248, 50);
+			CatInfo d = new CatInfo("D", 85, 50, 247, 5);
+			CatInfo g = new CatInfo("G", 86, 55, 249, 11);
+			CatInfo e = new CatInfo("E", 85, 45, 246, 42);
+			CatInfo h = new CatInfo("H", 95, 55, 244, 46);
+			
+			CatTree t = new CatTree(c);
+			
+			t.addCat(a);
+			t.addCat(f);
+			t.addCat(b);
+			t.addCat(d);
+			t.addCat(e);
+			t.addCat(h);
+			t.addCat(g);
+						
+			int []plan = t.root.junior.costPlanning(7);
+			if (plan.length == 7) { 
+				grade += 2;
+			} else {
+				comment = comment + "Error: costPlanning did not return an array of required size.\n";
+			}
+						
+			write(gradeString(grade, maxScore, comment));	
+
+		} catch (Exception e) {
+			comment = comment + "Exception Found: " + e.toString() + "\n";
+			e.printStackTrace();
+			write(gradeString(0, maxScore, comment));
+		}
+
+		return grade;
+	}
 
 	public static void main(String[] args) 
 	{
@@ -949,32 +1037,34 @@ public class MiniTester
 		total += m.test_addCat_6(6);
 
 		//REMOVE CAT
-		total += m.test_removeCat_0(6);
-		total += m.test_removeCat_1(7);
-		total += m.test_removeCat_3(7);		
-		total += m.test_removeCat_main(7);
+		total += m.test_removeCat_0(7);
+		total += m.test_removeCat_1(8);
+		total += m.test_removeCat_3(9);		
+		total += m.test_removeCat_main(10);
 
 //		//MOST SENIOR
-		total += m.test_mostSenior_0(8);
-		total += m.test_mostSenior_1(8);
+		total += m.test_mostSenior_0(11);
+		total += m.test_mostSenior_1(12);
 		
 //		//FLUFFIEST
-		total += m.test_fluffiest_0(9);
-		total += m.test_fluffiest_1(9);
+		total += m.test_fluffiest_0(13);
+		total += m.test_fluffiest_1(14);
 
 
 //		//HIRED FROM MONTHS
-		total += m.test_hired_0(10);
-		total += m.test_hired_1(11);
-		total += m.test_hired_2(12);
-		total += m.test_hired_3(13);
+		total += m.test_hired_0(15);
+		total += m.test_hired_1(16);
+		total += m.test_hired_2(17);
+		total += m.test_hired_3(18);
 //
 //		//FLUFFIEST FROM MONTH
-		total += m.test_fluffyFrom_0(12);
+		total += m.test_fluffyFrom_0(19);
 //
 //		//COST PLANNING
-//		total += m.test_costPlan_0(13);
+		total += m.test_costPlan_0(20);
+		total += m.test_costPlan_1(21);
+		total += m.test_costPlan_2(22);
 //		
-//		//m.write(m.gradeString(total, 50, "Your Final Tester "));
+		m.write(m.gradeString(total, 50, "Your Final Tester "));
 	}
 }
