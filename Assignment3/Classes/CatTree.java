@@ -221,7 +221,7 @@ public class CatTree implements Iterable<CatInfo>{
         }
        
         
-        // Not particularly efficient
+        // Another way to implement this method
 //        public int hiredFromMonths(int monthMin, int monthMax) { 
 //          int count = 0;
 //          try {
