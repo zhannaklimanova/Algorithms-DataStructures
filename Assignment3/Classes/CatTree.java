@@ -312,7 +312,7 @@ public class CatTree implements Iterable<CatInfo>{
     }
     
     private class CatTreeIterator implements Iterator<CatInfo> {
-       ArrayList<CatInfo> cats = new ArrayList<CatInfo>(30);
+       private ArrayList<CatInfo> cats = new ArrayList<CatInfo>(30);
        private int i = 0;
        
        public CatTreeIterator() {
@@ -342,8 +342,6 @@ public class CatTree implements Iterable<CatInfo>{
            list.add(currentNode.data);
            if (currentNode.junior != null) inOrderTraversal(currentNode.junior, list);
        }
-   }
-    
-    
+   }  
 }
 
