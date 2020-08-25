@@ -199,6 +199,7 @@ public class MyHashTable<K,V> implements Iterable<HashPair<K,V>>{
         return sortedResults;
     }
     
+    
     /**
      * This method takes as input an object of type MyHashTable with values that 
      * are Comparable. It returns an ArrayList containing all the keys from the map, 
@@ -255,9 +256,6 @@ public class MyHashTable<K,V> implements Iterable<HashPair<K,V>>{
         return wall+1;
     }
 
-    
-    
-    
     @Override
     public MyHashIterator iterator() {
         return new MyHashIterator();
