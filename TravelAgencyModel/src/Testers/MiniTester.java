@@ -1,5 +1,3 @@
-// package assignment1;
-
 // import java.lang.reflect.Field;
 
 // public class MiniTester 

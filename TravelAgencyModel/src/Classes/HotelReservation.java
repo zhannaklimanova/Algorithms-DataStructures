@@ -1,5 +1,3 @@
-package assignment1;
-
 public class HotelReservation extends Reservation { // TODO all classes make sure any fields called are called by this.field (better practice)
 
 	Hotel hotel; 

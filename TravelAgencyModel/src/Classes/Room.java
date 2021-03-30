@@ -1,5 +1,3 @@
-package assignment1;
-
 public class Room {
 
 	private String roomType; // type of room: double, queen, king 

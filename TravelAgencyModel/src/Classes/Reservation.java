@@ -1,5 +1,3 @@
-package assignment1;
-
 abstract class Reservation {
 	
 	String name; 

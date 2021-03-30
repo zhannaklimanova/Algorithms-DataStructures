@@ -1,5 +1,3 @@
-package assignment1;
-
 public class ZzTester {
 
 	public static void main(String[] args) {

@@ -1,5 +1,3 @@
-package assignment1;
-
 public class BnBReservation extends HotelReservation { // Bed and breakfast reservation
 
 	public BnBReservation(String reservationName, Hotel hotel, String typeRoom, int numNights) {

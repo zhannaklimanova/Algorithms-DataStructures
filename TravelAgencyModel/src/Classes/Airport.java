@@ -1,5 +1,3 @@
-package assignment1;
-
 public class Airport {
 
 	private int x_coordinate; // x coordinate of the airport on a world map with a scale to 1 km
