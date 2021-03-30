@@ -1,3 +1,3 @@
 # Algorithms-DataStructures
-Algorithms and data structures course assignments
+Algorithms and data structures projects
 
